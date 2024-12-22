@@ -1,0 +1,101 @@
+{% schema %}
+{
+  "name": "Training Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "top_left_title",
+      "label": "Top Left Title",
+      "default": "Health"
+    },
+    {
+      "type": "text",
+      "id": "top_right_title",
+      "label": "Top Right Title",
+      "default": "Coaching"
+    },
+    {
+      "type": "text",
+      "id": "bottom_left_title",
+      "label": "Bottom Left Title",
+      "default": "Motivation"
+    },
+    {
+      "type": "text",
+      "id": "bottom_right_title",
+      "label": "Bottom Right Title",
+      "default": "Performance"
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Training Section",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="training">
+  <div class="training-container">
+
+    <div class="training-card">
+        <img 
+          class="trainig-card-img" 
+          src="../assets/card.png"
+          alt="Desktop Training Image">
+    </div>
+
+    <div class="training-bottom">
+      <div class="training-image-mob">
+        <div class="training-image-top">
+        <img
+            class="training-img-top"
+            src="../assets/training-mob-top.png"
+            alt="Desktop Training Image"
+          >
+            </div>
+
+        <img
+            class="training-img-mob"
+            src="../assets/training-mob.png"
+            alt="Mobile Training Image">
+
+      </div>
+      <div class="training-image">
+          <img
+            class="training-img-left"
+            src="../assets/training-mob-left.png"
+            alt="Desktop Training Image"
+          >
+          <img
+            class="training-img"
+           src="../assets/training-mob-right.png"
+            alt="Mobile Training Image"
+          >
+      </div>
+    </div>
+
+    <div class="training-points">
+      <div class="training-points-top">
+        <div class="training-point-title">{{ section.settings.top_left_title }}</div>
+        <div class="training-point-title">{{ section.settings.top_right_title }}</div>
+      </div>
+
+      <div class="training-points-bottom">
+        <div class="training-point-title">{{ section.settings.bottom_left_title }}</div>
+        <div class="training-point-title">{{ section.settings.bottom_right_title }}</div>
+      </div>
+    </div>
+  </div>
+</section>

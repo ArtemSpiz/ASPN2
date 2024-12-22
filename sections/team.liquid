@@ -1,0 +1,178 @@
+{% schema %}
+{
+  "name": "Team Section",
+  "settings": [
+
+  ],
+  "blocks": [
+    {
+      "type": "team_member",
+      "name": "Team Member",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Team Member Name"
+        },
+        {
+          "type": "text",
+          "id": "role",
+          "label": "Role",
+          "default": "Team Member Role"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Team member's description or bio goes here."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Team Section",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="team">
+  <div class="team-container">
+    <div class="team-texts">
+      <div class="team-sup-title">Backed By</div>
+      <div class="team-title">The ASPN Performance Team</div>
+      <div class="team-text">
+        Empowering your performance with the knowledge and expertise of industry leaders, combining cutting-edge
+        strategies and proven methods.
+      </div>
+    </div>
+    <div class="team-fotos">
+      {% for block in section.blocks %}
+
+       <div class="team-foto">
+          <div class="team-foto-inner">
+            
+            <div class="team-foto-front">
+        <img
+          class="team-foto-img"
+          src="{{ block.settings.image | img_url: 'master' }}"
+          alt="{{ block.settings.name }}"
+        >
+        <div class="team-down">
+          <div class="team-foto-top">
+            <div class="team-name">{{ block.settings.name }}</div>
+            <div class="team-spec">{{ block.settings.role }}</div>
+          </div>
+          <button class="flip-button slider-arrow slider-arrow--top-right">
+            <img src="../assets/ArrowUpRight.png" alt="Arrow" class="arrow-image">
+              <path d="M7.05732 15.8082C6.99925 15.8662 6.95319 15.9352 6.92176 16.011C6.89034 16.0869 6.87416 16.1682 6.87416 16.2503C6.87416 16.3325 6.89034 16.4138 6.92176 16.4897C6.95319 16.5655 6.99925 16.6345 7.05732 16.6925C7.11539 16.7506 7.18433 16.7967 7.2602 16.8281C7.33607 16.8595 7.41739 16.8757 7.49951 16.8757C7.58163 16.8757 7.66295 16.8595 7.73882 16.8281C7.81469 16.7967 7.88363 16.7506 7.9417 16.6925L14.1917 10.4425C14.2498 10.3845 14.2959 10.3156 14.3274 10.2397C14.3588 10.1638 14.375 10.0825 14.375 10.0003C14.375 9.91821 14.3588 9.83688 14.3274 9.76101C14.2959 9.68514 14.2498 9.61621 14.1917 9.55816L7.9417 3.30816C7.82442 3.19088 7.66536 3.125 7.49951 3.125C7.33366 3.125 7.1746 3.19088 7.05732 3.30816C6.94004 3.42544 6.87416 3.5845 6.87416 3.75035C6.87416 3.9162 6.94004 4.07526 7.05732 4.19254L12.8659 10.0003L7.05732 15.8082Z" fill="white"/>
+          </button>
+        </div>
+      </div>
+      <!-- Задня сторона -->
+      <div class="team-foto-back">
+        <div class="back-content">
+          <div class="back-team-top">
+            <div class="back-team-texts">
+            <div class="back-team-image">
+              <img class="back-team-img" src="../assets/back-team.png">
+              </div>
+              <div class="back-team-info">
+                <div class="team-name">{{ block.settings.name }}</div>
+                <div class="team-spec">{{ block.settings.role }}</div>
+              </div>
+              </div>
+
+              <button class="flip-button-back slider-arrow slider-arrow--top-right slider-arrow-back">
+            <img src="../assets/ArrowUpRight.png" alt="Arrow" class="arrow-image">
+              <path d="M7.05732 15.8082C6.99925 15.8662 6.95319 15.9352 6.92176 16.011C6.89034 16.0869 6.87416 16.1682 6.87416 16.2503C6.87416 16.3325 6.89034 16.4138 6.92176 16.4897C6.95319 16.5655 6.99925 16.6345 7.05732 16.6925C7.11539 16.7506 7.18433 16.7967 7.2602 16.8281C7.33607 16.8595 7.41739 16.8757 7.49951 16.8757C7.58163 16.8757 7.66295 16.8595 7.73882 16.8281C7.81469 16.7967 7.88363 16.7506 7.9417 16.6925L14.1917 10.4425C14.2498 10.3845 14.2959 10.3156 14.3274 10.2397C14.3588 10.1638 14.375 10.0825 14.375 10.0003C14.375 9.91821 14.3588 9.83688 14.3274 9.76101C14.2959 9.68514 14.2498 9.61621 14.1917 9.55816L7.9417 3.30816C7.82442 3.19088 7.66536 3.125 7.49951 3.125C7.33366 3.125 7.1746 3.19088 7.05732 3.30816C6.94004 3.42544 6.87416 3.5845 6.87416 3.75035C6.87416 3.9162 6.94004 4.07526 7.05732 4.19254L12.8659 10.0003L7.05732 15.8082Z" fill="white"/>
+          </button>
+
+          </div>
+
+          <div class="back-team-bottom">
+            <div class="back-team-text">
+              For over a decade, Jake has been the go-to coach for some of the world’s most elite athletes, including Cy Young Award winners, NBA champions, and MMA World Champions. His deep expertise in human performance, recovery, and mental optimization has helped athletes excel at the highest levels of competition. Now, Jake is leveraging that unmatched knowledge to help everyday high performers achieve their full potential.
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+      {% endfor %}
+    </div>
+    <div class="slider-arrows">
+    <button class="slider-arrow slider-arrow--left">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M7.05732 15.8082C6.99925 15.8662 6.95319 15.9352 6.92176 16.011C6.89034 16.0869 6.87416 16.1682 6.87416 16.2503C6.87416 16.3325 6.89034 16.4138 6.92176 16.4897C6.95319 16.5655 6.99925 16.6345 7.05732 16.6925C7.11539 16.7506 7.18433 16.7967 7.2602 16.8281C7.33607 16.8595 7.41739 16.8757 7.49951 16.8757C7.58163 16.8757 7.66295 16.8595 7.73882 16.8281C7.81469 16.7967 7.88363 16.7506 7.9417 16.6925L14.1917 10.4425C14.2498 10.3845 14.2959 10.3156 14.3274 10.2397C14.3588 10.1638 14.375 10.0825 14.375 10.0003C14.375 9.91821 14.3588 9.83688 14.3274 9.76101C14.2959 9.68514 14.2498 9.61621 14.1917 9.55816L7.9417 3.30816C7.82442 3.19088 7.66536 3.125 7.49951 3.125C7.33366 3.125 7.1746 3.19088 7.05732 3.30816C6.94004 3.42544 6.87416 3.5845 6.87416 3.75035C6.87416 3.9162 6.94004 4.07526 7.05732 4.19254L12.8659 10.0003L7.05732 15.8082Z" fill="white"/>
+        </svg>
+      </button>
+      <button class="slider-arrow slider-arrow--right">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M7.05732 15.8082C6.99925 15.8662 6.95319 15.9352 6.92176 16.011C6.89034 16.0869 6.87416 16.1682 6.87416 16.2503C6.87416 16.3325 6.89034 16.4138 6.92176 16.4897C6.95319 16.5655 6.99925 16.6345 7.05732 16.6925C7.11539 16.7506 7.18433 16.7967 7.2602 16.8281C7.33607 16.8595 7.41739 16.8757 7.49951 16.8757C7.58163 16.8757 7.66295 16.8595 7.73882 16.8281C7.81469 16.7967 7.88363 16.7506 7.9417 16.6925L14.1917 10.4425C14.2498 10.3845 14.2959 10.3156 14.3274 10.2397C14.3588 10.1638 14.375 10.0825 14.375 10.0003C14.375 9.91821 14.3588 9.83688 14.3274 9.76101C14.2959 9.68514 14.2498 9.61621 14.1917 9.55816L7.9417 3.30816C7.82442 3.19088 7.66536 3.125 7.49951 3.125C7.33366 3.125 7.1746 3.19088 7.05732 3.30816C6.94004 3.42544 6.87416 3.5845 6.87416 3.75035C6.87416 3.9162 6.94004 4.07526 7.05732 4.19254L12.8659 10.0003L7.05732 15.8082Z" fill="white"/>
+        </svg>
+      </button>
+      </div>
+  </div>
+</section>
+
+<script>
+     document.addEventListener('DOMContentLoaded', () => {
+  const teamFotos = document.querySelector('.team-fotos');
+  const leftArrow = document.querySelector('.slider-arrow--left');
+  const rightArrow = document.querySelector('.slider-arrow--right');
+
+  leftArrow.addEventListener('click', () => {
+    teamFotos.scrollBy({
+      left: -300, // Adjust the scroll amount as needed
+      behavior: 'smooth'
+    });
+  });
+
+  rightArrow.addEventListener('click', () => {
+    teamFotos.scrollBy({
+      left: 300, // Adjust the scroll amount as needed
+      behavior: 'smooth'
+    });
+  });
+// Flip to back
+const flipButtons = document.querySelectorAll('.flip-button');
+flipButtons.forEach(flipButton => {
+  flipButton.addEventListener('click', () => {
+    const teamFoto = flipButton.closest('.team-foto');
+    const teamFotoFront = teamFoto.querySelector('.team-foto-front');
+    const teamFotoBack = teamFoto.querySelector('.team-foto-back');
+
+    teamFotoFront.classList.add('hide');
+    teamFotoBack.classList.add('show');
+  });
+});
+
+// Flip to front
+const flipBackButtons = document.querySelectorAll('.flip-button-back');
+flipBackButtons.forEach(flipButtonBack => {
+  flipButtonBack.addEventListener('click', () => {
+    const teamFoto = flipButtonBack.closest('.team-foto');
+    const teamFotoFront = teamFoto.querySelector('.team-foto-front');
+    const teamFotoBack = teamFoto.querySelector('.team-foto-back');
+
+    teamFotoFront.classList.remove('hide');
+    teamFotoBack.classList.remove('show');
+  });
+});
+
+
+})
+</script>
+

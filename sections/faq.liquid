@@ -1,0 +1,122 @@
+{% schema %}
+{
+  "name": "FAQ Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "text",
+      "id": "section_subtitle",
+      "label": "Section Subtitle",
+      "default": "Find Answers to Your Common Questions"
+    },
+    {
+      "type": "textarea",
+      "id": "contact_email",
+      "label": "Support Email",
+      "default": "info@aspn.health"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "What is the NeuralFlex Mind Mapping System?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>The NeuralFlex Mind Mapping System is a revolutionary tool that decodes your brain's unique neurochemical makeup. Using advanced testing methods, it identifies how your mind and body work together, allowing us to design truly personalized protocols for peak performance.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Section",
+      "category": "Information"
+    }
+  ]
+}
+{% endschema %}
+
+<section id="questions" class="questions">
+  <div class="questions-container">
+    {% if section.settings.section_title != blank or section.settings.section_subtitle != blank %}
+      {% if section.settings.section_title != blank %}
+        <div class="questions-sup-title">FAQS</div>
+        <div class="questions-title">
+          {{ section.settings.section_title }}
+        </div>
+      {% endif %}
+
+      {% if section.settings.section_subtitle != blank %}
+        <div class="questions-subtitile">
+          {{ section.settings.section_subtitle }}
+        </div>
+      {% endif %}
+    {% endif %}
+
+    <div class="questions-request">
+      <div class="requests">
+        {% for block in section.blocks %}
+          {% if block.type == 'faq' %}
+            <div class="request questions-texts {% if forloop.first == false %}before{% endif %}">
+              <div class="questions-texts-top">
+                <div class="request-title">
+                  {{ block.settings.question }}
+                </div>
+                <div class="request-image">
+                  <img class="questions-title-minus" src="{{ 'plus.png' | asset_url }}" alt="Expand">
+                </div>
+              </div>
+              <div class="questions-text">
+                {{ block.settings.answer }}
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <div class="help">
+        <div class="questions-help">
+          <div class="questions-help-title">Still have questions?</div>
+          <div class="questions-hepl-sectitle">We're here to help!</div>
+        </div>
+
+        <div class="questions-contacts">
+          Contact us at
+          <a href="mailto:{{ section.settings.contact_email }}" class="questions-email">
+            {{- section.settings.contact_email -}}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.questions-texts').forEach(questionstexts => {
+      const button = questionstexts.querySelector('.request-image img')
+      const textBlock = questionstexts.querySelector('.questions-text')
+      questionstexts.addEventListener('click', () => {
+        const isOpen = textBlock.style.display === 'block'
+        textBlock.style.display = isOpen ? 'none' : 'block'
+        button.src = isOpen
+          ? "{{ 'plus.png' | asset_url }}"
+          : "{{ 'ic_baseline-minus.png' | asset_url }}"
+      })
+    })
+  })
+</script>

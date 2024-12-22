@@ -1,0 +1,107 @@
+  {% schema %}
+{
+  "name": "Getting Started Guide",
+  "settings": [
+    {
+      "type": "text",
+      "id": "sup_title",
+      "label": "Superscript Title",
+      "default": "Your Guide to Getting Started"
+    },
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Main Title",
+      "default": "How It Works"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Achieve Your Best Self with a Personalized Path to Wellness"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Find out your NeuralFlex Profile"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "guide_step",
+      "name": "Guide Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Step Number",
+          "default": "01"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Step Title",
+          "default": "Discover Your NeuralFlex Profile"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Step Description",
+          "default": "<p>Unlock your peak potential with ASPN's at-home saliva test and FDA-approved rapid inflammation test. Your unique profile, redefined for personalized performance.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Getting Started Guide",
+      "category": "Information"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="guide" id="guide">
+  <div class="guide-container">
+    <div class="guide-top">
+      <div class="guide-texts">
+        {% if section.settings.sup_title != blank %}
+          <div class="guide-sup-title">{{ section.settings.sup_title }}</div>
+        {% endif %}
+
+        <div class="guide-title">Your Path<br class="quide-mob"> to<a class="quide-title2"> Peak Performance</a></div>
+
+          <div class="guide-subtitile">Achieve Your Best Self with a Personalized<br class="quide-mob"> Path to Wellness</div>
+      </div>
+
+      {% if section.settings.button_text != blank %}
+      <div class="quide-btn">
+        <button data-modal-open class="guide-button guide-btn dark open-modal">
+          {{ section.settings.button_text }}
+        </button>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="guide-points">
+      {% assign steps = section.blocks | where: 'type', 'guide_step' %}
+      {% for block in steps %}
+        <div class="guide-point">
+          <div class="guide-point-top">
+            <div class="guide-numb">{{ block.settings.number }}</div>
+            <div class="guide-point-title">{{ block.settings.title }}</div>
+          </div>
+          <div class="guide-point-subtitle">
+            {{ block.settings.description }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

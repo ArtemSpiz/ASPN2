@@ -1,0 +1,100 @@
+{% schema %}
+{
+  "name": "Performance Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "infinite_text",
+      "label": "Infinite Scroll Text",
+      "default": "Health Drives"
+    },
+    {
+      "type": "text",
+      "id": "description_text",
+      "label": "Description Text",
+      "default": "Designed around your unique NeuralFlex profile, ASPN delivers AI-assisted expert coaching solutions that elevate your performance—effortlessly and sustainably."
+    },
+    {
+      "type": "text",
+      "id": "journey_text",
+      "label": "Journey Text",
+      "default": "Your journey, optimized."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "performance_item",
+      "name": "Performance Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "item_text",
+          "label": "Item Text"
+        },
+        {
+          "type": "checkbox",
+          "id": "is_personalized",
+          "label": "Is Personalized Item",
+          "default": false
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<section class="performans">
+  <div class="performance-container">
+    <div class="performance-infinite">
+      <div class="per-inf">
+        <div class="performance-title">
+          {{ section.settings.infinite_text }}
+          <a class="per-title-str">Performance</a>
+        </div>
+        <div class="performance-title">
+          {{ section.settings.infinite_text }}
+          <a class="per-title-str">Performance</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="performance-bottom">
+      <div class="performance-items">
+        {% for block in section.blocks %}
+          {% if block.settings.is_personalized %}
+            <div class="performance-item">
+              <div class="performance-item-text personalized">{{ block.settings.item_text }}</div>
+            </div>
+          {% endif %}
+        {% endfor %}
+
+        <div class="performance-items-bottom">
+          {% for block in section.blocks %}
+            {% unless block.settings.is_personalized %}
+              <div class="performance-item">
+                <div class="performance-item-text">{{ block.settings.item_text }}</div>
+              </div>
+            {% endunless %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="performance-items mobile">
+        <div class="performance-items-top">
+          {% for block in section.blocks %}
+            <div class="performance-item performance-item-mobile {% if block.settings.is_personalized %}personalized{% endif %}">
+              <div class="performance-item-text">{{ block.settings.item_text }}</div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="performers-text">
+        {{ section.settings.description_text }}
+        <br>
+        <br>
+        <div class="per-str">{{ section.settings.journey_text }}</div>
+      </div>
+    </div>
+  </div>
+</section>

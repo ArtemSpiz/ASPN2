@@ -1,0 +1,53 @@
+{% schema %}
+{
+  "name": "Brain",
+  "settings": [
+
+  ],
+  "blocks": [
+    {
+      "type": "element",
+      "name": "Element",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "element_image",
+          "label": "Element Image"
+        },
+        {
+          "type": "text",
+          "id": "element_title",
+          "label": "Element Title",
+          "default": "Default Title"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Brain",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="brain">
+  <div class="brain-container">
+    <div class="brain-sup-text">The ASPN Advantage</div>
+    <div class="brain-title">Your Brain, Your Blueprint</div>
+    <div class="brain-subtitle">
+      We don’t follow trends—we set new standards. Experience a fully<br> integrated, personalized system.
+    </div>
+    <div class="brain-group">
+      {% for block in section.blocks %}
+        <div class="element">
+          <div class="element-logo">
+            <img src="{{ block.settings.element_image | image_url }}" alt="{{ block.settings.element_title }}">
+          </div>
+          <div class="element-title">{{ block.settings.element_title }}</div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

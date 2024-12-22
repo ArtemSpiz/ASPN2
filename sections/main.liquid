@@ -1,0 +1,39 @@
+{% schema %}
+{
+  "name": "Main",
+  "settings": []
+}
+{% endschema %}
+
+<header class="custom-header">
+  <div class="main-header">
+    <div class="container">
+      <div class="header-logo">
+        <img src="{{ 'Logo.png' | asset_url }}" alt="Logo">
+      </div>
+      <div class="header-nav">
+        <p><a href="#guide" class="header-text">How It Works</a></p>
+        <p><a href="#future" class="header-text">Features</a></p>
+        <p><a href="#choose" class="header-text">Benefits</a></p>
+        <p><a href="#questions" class="header-text">FAQ</a></p>
+      </div>
+      <button data-modal-open class="header-button header-btn light">Join the Waitlist</button>
+    </div>
+  </div>
+
+  <section class="main">
+    <div class="main-container">
+      <h1 class="main-title">
+        Neuro-Driven<br class="element-title-mob"> Protocols
+        <br class="main-mob">
+        for
+        <span class="main-title2">Peak<br class="element-title-mob"> Performance</span>
+      </h1>
+      <p class="main-subtitle">ASPN: The All-in-One System for Unmatched<br class="main-mob"> Mental and Physical Excellence</p>
+      <button data-modal-open class="main-button main-btn light">Join the Waitlist Now</button>
+    </div>
+    <div class="main-bg">
+      <img class="main-img" src="{{ 'MainBg.png' | asset_url }}" alt="Main Background">
+    </div>
+  </section>
+</header>

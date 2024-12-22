@@ -1,0 +1,146 @@
+certainly,here are the @font-face declarations for the fonts in the provided list: @font-face {
+  font-family: "HostGrotesk-Bold";
+  src: url("HostGrotesk-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HostGrotesk-BoldItalic";
+  src: url("HostGrotesk-BoldItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "HostGrotesk-Italic";
+  src: url("HostGrotesk-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "HostGrotesk-Medium";
+  src: url("HostGrotesk-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HostGrotesk-MediumItalic";
+  src: url("HostGrotesk-MediumItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "HostGrotesk-Regular";
+  src: url("HostGrotesk-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HostGrotesk-SemiBold";
+  src: url("HostGrotesk-SemiBold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "HostGrotesk-SemiBoldItalic";
+  src: url("HostGrotesk-SemiBoldItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Tirong-Black";
+  src: url("Tirong-Black.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Tirong-BlackItalic";
+  src: url("Tirong-BlackItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Tirong-Bold";
+  src: url("Tirong-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Tirong-BoldItalic";
+  src: url("Tirong-BoldItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Tirong-ExtraBold";
+  src: url("Tirong-ExtraBold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Tirong-ExtraBoldItalic";
+  src: url("Tirong-ExtraBoldItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Tirong-ExtraLight";
+  src: url("Tirong-ExtraLight.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Tirong-ExtraLightItalic";
+  src: url("Tirong-ExtraLightItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Tirong-Italic";
+  src: url("Tirong-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Tirong-Light";
+  src: url("Tirong-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Tirong-LightItalic";
+  src: url("Tirong-LightItalic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Tirong-Medium";
+  src: url("Tirong-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Tirong-Regular";
+  src: url("Tirong-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,0 +1,178 @@
+{% schema %}
+{
+  "name": "Cooperation",
+  "settings": [
+
+  ],
+  "blocks": [
+    {
+      "type": "top_logo",
+      "name": "Top Logos",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "top_logo_image",
+          "label": "Top Logo"
+        }
+      ]
+    },
+    {
+      "type": "bottom_logo",
+      "name": "Bottom Logos",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "bottom_logo_image",
+          "label": "Bottom Logo"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cooperation",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="cooperation">
+  <div class="coop-container">
+    <div class="coop-title">
+      <a class="coop-title2">Trusted by</a>
+      Those who<br class="footer-top-logo-mob"> Demand the Best
+    </div>
+    <div class="coop-logos">
+      <div class="logos-wrapper">
+        <div>
+          <span>
+            {% for block in section.blocks %}
+              {% if block.type == 'top_logo' %}
+                <div class="logo">
+                  {% if block.settings.top_logo_image %}
+                    <img
+                      class="logo-img"
+                      src="{{ block.settings.top_logo_image | img_url: 'master' }}"
+                      alt="Top Logo"
+                    >
+                  {% endif %}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </span>
+          <span>
+            {% for block in section.blocks %}
+              {% if block.type == 'top_logo' %}
+                <div class="logo">
+                  {% if block.settings.top_logo_image %}
+                    <img
+                      class="logo-img"
+                      src="{{ block.settings.top_logo_image | img_url: 'master' }}"
+                      alt="Top Logo"
+                    >
+                  {% endif %}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </span>
+          <span>
+            {% for block in section.blocks %}
+              {% if block.type == 'top_logo' %}
+                <div class="logo">
+                  {% if block.settings.top_logo_image %}
+                    <img
+                      class="logo-img"
+                      src="{{ block.settings.top_logo_image | img_url: 'master' }}"
+                      alt="Top Logo"
+                    >
+                  {% endif %}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </span>
+          <span>
+            {% for block in section.blocks %}
+              {% if block.type == 'top_logo' %}
+                <div class="logo">
+                  {% if block.settings.top_logo_image %}
+                    <img
+                      class="logo-img"
+                      src="{{ block.settings.top_logo_image | img_url: 'master' }}"
+                      alt="Top Logo"
+                    >
+                  {% endif %}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </span>
+        </div>
+      </div>
+
+      <div class="logos-wrapper-bot">
+        <div>
+          <span>
+            {% for block in section.blocks %}
+              {% if block.type == 'bottom_logo' %}
+                <div class="logo">
+                  {% if block.settings.bottom_logo_image %}
+                    <img
+                      class="logo-img"
+                      src="{{ block.settings.bottom_logo_image | img_url: 'master' }}"
+                      alt="Bottom Logo"
+                    >
+                  {% endif %}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </span>
+          <span>
+            {% for block in section.blocks %}
+              {% if block.type == 'bottom_logo' %}
+                <div class="logo">
+                  {% if block.settings.bottom_logo_image %}
+                    <img
+                      class="logo-img"
+                      src="{{ block.settings.bottom_logo_image | img_url: 'master' }}"
+                      alt="Bottom Logo"
+                    >
+                  {% endif %}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </span>
+          <span>
+            {% for block in section.blocks %}
+              {% if block.type == 'bottom_logo' %}
+                <div class="logo">
+                  {% if block.settings.bottom_logo_image %}
+                    <img
+                      class="logo-img"
+                      src="{{ block.settings.bottom_logo_image | img_url: 'master' }}"
+                      alt="Bottom Logo"
+                    >
+                  {% endif %}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </span>
+          <span>
+            {% for block in section.blocks %}
+              {% if block.type == 'bottom_logo' %}
+                <div class="logo">
+                  {% if block.settings.bottom_logo_image %}
+                    <img
+                      class="logo-img"
+                      src="{{ block.settings.bottom_logo_image | img_url: 'master' }}"
+                      alt="Bottom Logo"
+                    >
+                  {% endif %}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

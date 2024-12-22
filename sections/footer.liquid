@@ -1,0 +1,180 @@
+{% schema %}
+{
+ "name": "Footer",
+ "settings": [
+   {
+     "type": "image_picker",
+     "id": "footer_logo",
+     "label": "Footer Logo"
+   },
+   {
+     "type": "text",
+     "id": "footer_title",
+     "label": "Footer Title",
+     "default": "Health drives performance"
+   },
+   {
+     "type": "text",
+     "id": "email_address",
+     "label": "Email Address",
+     "default": "info@aspnhealth.com"
+   },
+   {
+     "type": "text",
+     "id": "phone_number",
+     "label": "Phone Number",
+     "default": "(123) 456-7890"
+   },
+   {
+     "type": "url",
+     "id": "instagram_link",
+     "label": "Instagram Link"
+   },
+   {
+     "type": "url",
+     "id": "youtube_link",
+     "label": "YouTube Link"
+   },
+   {
+     "type": "url",
+     "id": "facebook_link",
+     "label": "Facebook Link"
+   },
+   {
+     "type": "url",
+     "id": "other_social_link",
+     "label": "Other Social Link"
+   },
+
+ ],
+ "blocks": [
+   {
+     "type": "footer_link",
+     "name": "Footer Link",
+     "settings": [
+       {
+         "type": "text",
+         "id": "link_text",
+         "label": "Link Text"
+       },
+       {
+         "type": "url",
+         "id": "link_url",
+         "label": "Link URL"
+       }
+     ]
+   }
+ ],
+ "presets": [
+   {
+     "name": "Footer",
+     "category": "Footer"
+   }
+ ]
+}
+{% endschema %}
+
+<footer class="footer">
+  <span>
+    <div class="footer-container">
+      <div class="footer-top">
+        <img
+          class="footer-top-logo"
+          src="{{ section.settings.footer_logo | img_url: 'master' }}"
+          alt="Footer Logo"
+        >
+        <div class="footer-title">
+          {{ section.settings.footer_title }}
+        </div>
+      </div>
+      <div class="footer-middle">
+        <div class="footer-middle-button footer-mid-btn-desktop">
+          <button data-modal-open class="footer-middle-btn light">Join the Waitlist</button>
+        </div>
+
+        <div class="footer-middle-links">
+          <a href="" class="footer-link">About ASPN Health</a>
+          <a href="/pages/data-sale-opt-out" class="footer-link">Privacy Policy</a>
+          <a href="/pages/terms" class="footer-link">Terms of Service</a>
+        </div>
+
+        <div class="footer-middle-infos">
+          <div class="footer-middle-info">
+
+            <div class="email">
+            <img
+              class="email-foto"
+              src="{{ 'iconoir_mail.png' | asset_url }}"
+              alt="Email Icon"
+            >
+            <a href="mailto:{{ section.settings.email_address }}" class="footer-middle-text">
+              {{ section.settings.email_address }}
+            </a>
+
+            </div>
+
+            <div class="num-phone">
+            <img
+              class="email-foto"
+              src="{{ 'iconoir_mail.png' | asset_url }}"
+              alt="Email Icon"
+            >
+
+            <a href="{{ section.settings.phone_number }}" class="footer-middle-text">
+              {{ section.settings.phone_number }}
+            </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-middle-button footer-mid-btn-mob">
+          <button data-modal-open class="footer-middle-btn light">Join the Waitlist</button>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-text">© {{ 'now' | date: '%Y' }} ASPN. All rights reserved.</div>
+        <div class="follows">
+          <div class="follow-text">Follow us on:</div>
+          <div class="folow-logos">
+            {% if section.settings.instagram_link %}
+              <a href="{{ section.settings.instagram_link }}">
+                <img
+                  class="folow-logo"
+                  src="{{ 'inst.png' | asset_url }}"
+                  alt="Instagram"
+                >
+              </a>
+            {% endif %}
+            {% if section.settings.youtube_link %}
+              <a href="{{ section.settings.youtube_link }}">
+                <img
+                  class="folow-logo"
+                  src="{{ 'youtube.png' | asset_url }}"
+                  alt="YouTube"
+                >
+              </a>
+            {% endif %}
+            {% if section.settings.other_social_link %}
+              <a href="{{ section.settings.other_social_link }}">
+                <img
+                  class="folow-logo"
+                  src="{{ 'Socialicon-2.png' | asset_url }}"
+                  alt="Social Icon"
+                >
+              </a>
+            {% endif %}
+            {% if section.settings.facebook_link %}
+              <a href="{{ section.settings.facebook_link }}">
+                <img
+                  class="folow-logo"
+                  src="{{ 'facebook.png' | asset_url }}"
+                  alt="Facebook"
+                >
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </span>
+</footer>

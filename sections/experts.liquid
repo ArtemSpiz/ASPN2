@@ -1,0 +1,246 @@
+{% schema %}
+{
+  "name": "Experts Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "sup_title",
+      "label": "Sup Title",
+      "default": "Expert-Led Performance Boost"
+    },
+    {
+      "type": "text",
+      "id": "main_title",
+      "label": "Main Title",
+      "default": "Why ASPN?"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Proven Expertise, Proven Results"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo_image",
+          "label": "Logo Image"
+        }
+      ]
+    },
+    {
+      "type": "expert",
+      "name": "Expert",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "expert_image",
+          "label": "Expert Photo"
+        },
+        {
+          "type": "text",
+          "id": "expert_name",
+          "label": "Expert Name"
+        },
+        {
+          "type": "text",
+          "id": "expert_title",
+          "label": "Expert Title"
+        },
+        {
+          "type": "checkbox",
+          "id": "is_color_variant",
+          "label": "Use Color Variant Image",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Experts Section",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="experts">
+  <div class="experts-container">
+    <div class="experts-sup-title">{{ section.settings.sup_title }}</div>
+    <div class="experts-title">
+      Why ASPN?
+      <br class="element-title-mob">
+    </div>
+    <div class="experts-subtitle">
+      Proven Expertise, Proven Results
+      <br class="element-title-mob">
+    </div>
+
+    <div class="logos-wrapper-bot">
+      <div class="logos-scale">
+        <span class="logos-span">
+          {% for block in section.blocks %}
+            {% if block.type == 'logo' %}
+              <div class="logo {{ forloop.index }}">
+                {% if block.settings.logo_image %}
+                  <img
+                    class="logo-img"
+                    src="{{ block.settings.logo_image | img_url: 'master' }}"
+                    alt="Logo"
+                  >
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </span>
+        <span class="logos-span">
+          {% for block in section.blocks %}
+            {% if block.type == 'logo' %}
+              <div class="logo {{ forloop.index }}">
+                {% if block.settings.logo_image %}
+                  <img
+                    class="logo-img"
+                    src="{{ block.settings.logo_image | img_url: 'master' }}"
+                    alt="Logo"
+                  >
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </span>
+        <span class="logos-span">
+          {% for block in section.blocks %}
+            {% if block.type == 'logo' %}
+              <div class="logo {{ forloop.index }}">
+                {% if block.settings.logo_image %}
+                  <img
+                    class="logo-img"
+                    src="{{ block.settings.logo_image | img_url: 'master' }}"
+                    alt="Logo"
+                  >
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </span>
+        <span class="logos-span">
+          {% for block in section.blocks %}
+            {% if block.type == 'logo' %}
+              <div class="logo {{ forloop.index }}">
+                {% if block.settings.logo_image %}
+                  <img
+                    class="logo-img"
+                    src="{{ block.settings.logo_image | img_url: 'master' }}"
+                    alt="Logo"
+                  >
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </span>
+      </div>
+    </div>
+
+     <div class="logos-wrapper-bot mob">
+      <div class="logos-scale">
+        <span class="logos-span">
+          {% for block in section.blocks %}
+            {% if block.type == 'logo' %}
+              <div class="logo {{ forloop.index }}">
+                {% if block.settings.logo_image %}
+                  <img
+                    class="logo-img"
+                    src="{{ block.settings.logo_image | img_url: 'master' }}"
+                    alt="Logo"
+                  >
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </span>
+        <span class="logos-span">
+          {% for block in section.blocks %}
+            {% if block.type == 'logo' %}
+              <div class="logo {{ forloop.index }}">
+                {% if block.settings.logo_image %}
+                  <img
+                    class="logo-img"
+                    src="{{ block.settings.logo_image | img_url: 'master' }}"
+                    alt="Logo"
+                  >
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </span>
+        <span class="logos-span">
+          {% for block in section.blocks %}
+            {% if block.type == 'logo' %}
+              <div class="logo {{ forloop.index }}">
+                {% if block.settings.logo_image %}
+                  <img
+                    class="logo-img"
+                    src="{{ block.settings.logo_image | img_url: 'master' }}"
+                    alt="Logo"
+                  >
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </span>
+        <span class="logos-span">
+          {% for block in section.blocks %}
+            {% if block.type == 'logo' %}
+              <div class="logo {{ forloop.index }}">
+                {% if block.settings.logo_image %}
+                  <img
+                    class="logo-img"
+                    src="{{ block.settings.logo_image | img_url: 'master' }}"
+                    alt="Logo"
+                  >
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </span>
+      </div>
+    </div>
+    <div class="experts-wrapper">
+      <div class="experts-fotos">
+        {% for block in section.blocks %}
+          {% if block.type == 'expert' %}
+            <div class="experts-foto">
+              <div class="expert-foto-image {% if block.settings.is_color_variant %}other-color{% endif %}">
+                {% if block.settings.expert_image %}
+                  <img
+                    class="experts-foto-img {% if block.settings.is_color_variant == false %}experts-foto-img-black{% endif %}"
+                    src="{{ block.settings.expert_image | img_url: 'master' }}"
+                    alt="{{ block.settings.expert_name }}"
+                  >
+                {% endif %}
+              </div>
+              <div class="experts-foto-top">
+                <div class="experts-name">{{ block.settings.expert_name }}</div>
+                <div class="experts-spec">{{ block.settings.expert_title }}</div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="experts-down-text">
+      <div class="experts-text">
+      Our team isn’t just experienced — it’s proven. We’ve worked with the world’s top performers —
+      Olympic medalists, UFC titans, and Forbes List executives. Now, we’re bringing that expertise to you.
+      </div>
+    </div>
+  </div>
+</section>
+
